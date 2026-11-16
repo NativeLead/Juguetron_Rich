@@ -1,0 +1,1 @@
+juguetron-rich-TEMPLATE
