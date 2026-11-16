@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "juguetron-banner",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\Angelica\\AppData\\Local\\Temp\\claude\\72898c01446b4691\\5127688b-18c8-41e9-8018-b2b11b080711\\scratchpad\\serve.ps1", "-Root", "D:\\BIZNAGA\\SCREENS HOY\\SS\\ss ctv\\juguetron_300x600"],
+      "port": 8765
+    }
+  ]
+}
