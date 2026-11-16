@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Biznaga</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+
+
+    :root {
+      --ancho-general: max(70vw, min(1010px, 100vw - 64px));
+    }
+
+    h2 {
+      font-size: 1.7em;
+      font-family: "Source Sans Pro";
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: rgb(107, 107, 107);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      color: #585858;
+      box-sizing: border-box;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+    }
+
+    html,
+    body {
+      min-height: 100vh;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .general-container {
+      width: 100vw;
+      max-width: var(--ancho-general);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: auto;
+    }
+
+    #header {
+      padding: 1em 0 0 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      width: 120px;
+      margin-right: 2em;
+    }
+
+
+    #footer {
+      width: 100vw;
+      margin-top: auto;
+      margin-left: calc((var(--ancho-general) - 100vw) / 2);
+      background-color: #f6f6f6;
+      padding: 5em 0 6em 0;
+
+    }
+
+    .inner {
+      width: var(--ancho-general);
+      margin: auto;
+    }
+
+    #main {
+      width: 100%;
+      margin: 1em 0 5em 0;
+    }
+
+    #footer .copyright {
+      width: 100%;
+      padding: 0;
+      margin-top: 5em;
+      list-style: none;
+      font-size: 0.8em;
+      color: rgba(88, 88, 88, 0.5);
+    }
+
+
+    #footer .copyright li a {
+      display: inline-block;
+      line-height: 1;
+      padding: 0 0 0 1em;
+      margin: 0 0 0 1em;
+      color: #444;
+      font-size: 1.3em;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    .formato {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .formato iframe {
+      display: block;
+      border: 0;
+      max-width: none;
+    }
+
+    /* Formatos anchos: ocupan toda la fila */
+    .t970x250, .t728x90 {
+      grid-column: 1 / -1;
+      flex: 0 0 100%;             /* fila propia */
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Los formatos se reparten en filas y cada fila se centra por sí sola,
+       así una fila con 1 o 2 formatos no queda corrida a la izquierda */
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3em 3em;
+    }
+
+    /* Si la demo tiene un solo formato, se centra en la página */
+    section:has(> :only-child) {
+      grid-template-columns: auto;
+      justify-content: center;
+      justify-items: center;
+    }
+
+
+    @media screen and (min-width:700px) {
+      .t970x250, .t728x90 {
+        max-width: none;
+      }
+    }
+
+
+    @media screen and (max-width:1700px){
+      :root{
+        --ancho-general: 80vw;
+      }
+    }
+
+    @media screen and (max-width:1480px){
+      :root{
+        --ancho-general: 95vw;
+      }
+    }
+
+    /* ===== MÓVIL: todo centrado, a lo ancho del teléfono con margen de 16px ===== */
+    @media screen and (max-width: 699px) {
+
+      .t728x90, .t970x250{
+        display: none !important;
+      }
+
+      :root {
+        --ancho-general: calc(100vw - 32px);
+      }
+
+      .general-container {
+        align-items: stretch;
+      }
+
+      #header {
+        padding-top: 0.5em;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .logo {
+        width: 60px;
+        margin-right: 1em;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      #main {
+        width: 100%;
+        margin: 0.7em 0 2.5em 0;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 7em;               /* espacio sobre la línea separadora */
+      }
+
+      .formato {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Separador sutil entre formato y formato */
+      .formato + .formato {
+        padding-top:7em;       /* espacio bajo la línea separadora */
+        background: linear-gradient(90deg, transparent, #bdbdbd 22%, #bdbdbd 78%, transparent) center top / 80% 2px no-repeat;
+      }
+
+      #footer {
+        padding: 2.5em 0 3em 0;
+      }
+
+      #footer .copyright {
+        margin-top: 0;
+        text-align: center;
+      }
+
+      #footer .copyright li a {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="general-container">
+
+    <header id="header">
+
+        <img class="logo" src="https://love4native.com/wp-content/uploads/2025/02/LOGO_BIZNAGA_2023_1000X1000_COLOR_VERTICAL.png"
+          alt="" />
+
+      <h2>JUGUETRON 2026 RICHMEDIA</h2>
+    </header>
+
+
+    <div id="main">
+
+      <section>
+        <article class="formato t300x600">
+          <div><iframe src="https://love4native.com/codes/National/2026/Finde/300x600.html" width="300" height="600"
+              frameborder="0" scrolling="no"></iframe></div>
+        </article>
+        <article class="formato t300X600">
+          <div><iframe src="https://github.com/angelicadesign89/banners-ads/blob/main/JUGUETRON%20VIDEOSKIN/ROYAL_CARIBBEAN_Q3_DISPLAY_300x600.html" width="320" height="480"
+              frameborder="0" scrolling="no"></iframe></div>
+        </article>
+        
+
+      </section>
+
+    </div>
+
+
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li><a href="https://www.webads.es/">biznagamedia.com © 2026</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+  </div>
+
+
+  <script>
+    (function () {
+      function randomHash() {
+        return Date.now().toString(36) + '_' + Math.random().toString(36).slice(2);
+      }
+
+      function appendCacheBuster(url) {
+        if (!url) return url;
+
+        var cleanUrl = url.split('#')[0];
+        var separator = cleanUrl.indexOf('?') === -1 ? '?' : '&';
+
+        return cleanUrl + separator + 'cb=' + randomHash();
+      }
+
+      function init() {
+        var elements = document.querySelectorAll('iframe[src], img[src], video[src], source[src]');
+
+        elements.forEach(function (element) {
+          var src = element.getAttribute('src');
+          element.setAttribute('src', appendCacheBuster(src));
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+  <script>
+    /* Ajuste de formatos: si un formato no cabe en el ancho disponible (970x250 en pantallas
+       pequeñas o móvil) se reduce solo lo necesario; se puede aplicar --escala. */
+    (function () {
+      function ajustarFormatos() {
+        document.querySelectorAll('.formato').forEach(function (formato) {
+          var iframe = formato.querySelector('iframe');
+          if (!iframe) return;
+
+          var caja = iframe.parentElement;
+          caja.style.transform = '';
+          caja.style.transformOrigin = '';
+          caja.style.width = '';
+          caja.style.height = '';
+
+          var estilo = getComputedStyle(formato);
+          var disponible = Math.min(
+            formato.clientWidth - parseFloat(estilo.paddingLeft) - parseFloat(estilo.paddingRight),
+            formato.parentElement.clientWidth
+          );
+          var ancho = iframe.offsetWidth;
+          var alto = iframe.offsetHeight;
+
+          // --escala (CSS) reduce los formatos dentro del teléfono; además nunca se salen del ancho disponible
+          var escala = Math.min(1, parseFloat(estilo.getPropertyValue('--escala')) || 1, disponible > 0 ? disponible / ancho : 1);
+
+          if (escala < 1) {
+            caja.style.transform = 'scale(' + escala + ')';
+            caja.style.transformOrigin = '0 0';
+            caja.style.width = (ancho * escala) + 'px';
+            caja.style.height = (alto * escala) + 'px';
+          }
+        });
+      }
+
+      function init() {
+        ajustarFormatos();
+        window.addEventListener('resize', ajustarFormatos);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+
+</html>
