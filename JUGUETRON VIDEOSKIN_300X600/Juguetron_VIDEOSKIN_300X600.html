@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta charset='UTF-8'>		
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>  
+		<script type="text/javascript">
+			document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+			</script>
+
+<script type="text/javascript">
+   function adfOpenGlobalClickTAG() {
+        var adfClickTAGName = 'clickTAG',
+            adfClickTAGUrl = 'https://www.jaboneskleenex.mx/';
+        dhtml.sendEvent(6, 'Click');
+        // Lanzamiento evento Click%
+        console.log("Se lanza click redireccion")
+        ///////////////////////////////////////
+        window.open(dhtml.getVar(adfClickTAGName, adfClickTAGUrl), dhtml.getVar('landingPageTarget', '_blank'));
+    }
+</script>
+    
+<style>
+body{
+    margin: 0;
+padding: 0;
+border: 0;
+}
+#back {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    border: 0px solid #C00;
+    position: fixed;
+    z-index: 10000 !important;
+    top: 0;
+    cursor: pointer;
+}
+#mosaic_wrap {
+    position: fixed;
+    width: 300px;
+    height: 600px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    margin: auto;
+    z-index: 9999 !important;
+    border: 0px solid #000;
+    background-size: 100%;
+    -webkit-box-shadow: 0 0 6px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 0 6px 3px rgba(0,0,0,0.3);
+}
+#content-video{
+    width: 300px;
+    z-index: 5;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    margin-top: -297px;
+    /* border: 2px solid #fff; */
+    margin-left: -5px;
+    padding: 5px;
+
+        }
+        #video{
+            width: 100%;
+            margin-top: 0;
+        }
+        #contvideo{
+            width : 300px;
+            height: 170px;
+            overflow: hidden;
+        }
+        #imgContainer{
+            visibility: hidden;
+             
+
+
+        }
+        #linkTo-video{width: 300px;text-align: center;}
+        #linkTo-video img{height: 35px;
+    margin-top: 17px;
+    border-radius: 50px;
+    box-shadow: 2px 3px 10px rgb(0 0 0 / 70%);
+}
+
+        #sonido {
+            position: absolute;
+            min-width: 30px;
+            min-height: 30px;
+            border-radius: 50px;
+            right: 4px;
+    top: 122px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        #second-screen {
+    width: 300px;
+    height: 600px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+#contenido{
+    position: absolute;
+z-index: 99;
+top: 281px;
+}
+        .unmuted {
+            background-image: url(https://biznagamedia.github.io/BiznagaM/seat/resources/unmuted.png) !important;
+            background-size: 80%;
+        }
+
+        .muted {
+            background-image: url(https://biznagamedia.github.io/BiznagaM/seat/resources/muted.png);
+            background-size: 80%;
+        }
+        .ImgSob{position: absolute;    
+        top: 137px;
+    z-index: 100;}
+</style></head>
+
+<body cz-shortcut-listen="true">
+  
+
+<div id="back">  
+
+<div id="mosaic_wrap">  
+    
+        <div class="loader" id="loader" style="display: none;"></div>
+  
+   
+        <div id="box-video"  onclick="adfOpenGlobalClickTAG()" style="cursor: pointer;">
+            <video id="video2" webkit-playsinline="true" playsinline="true" autoplay muted loop>
+                <source src="https://res.cloudinary.com/bwmcpwyf/video/upload/v1795723539/juguetron_banner_300x600_rich_1.mp4" type="video/mp4">
+                    
+            </video>
+            </div>
+
+
+
+            <div id="sonido" class="muted" width="50" height="50"></div>
+           
+            <div id="clicker">   </div>
+
+
+                  <!--  starts video.js -->
+
+                    <div id="soundCheck">
+                         <div id="sound-icon"></div>
+                    </div>
+                    
+                        
+                    <div id="contenido">
+                      
+                        <div id="content-video" onclick="adfOpenGlobalClickTAG()">
+                            <video id="video" webkit-playsinline="true" playsinline="true" autoplay="" muted="" loop="">
+                                <source src="https://love4native.com/codes/KLEENEX/VIDEO.mp4" type="video/mp4">
+                            </video>
+
+                            </div>
+                  <!-- ends video.js -->
+
+       </div> <!--fin_mosaic_wrap--> 
+
+
+</div>
+
+</div>
+
+<script>
+    var video = document.getElementById("video");
+    var sonido = document.getElementById("sonido");
+    var clo = 0;
+    var count = 1;
+    var count2 = 1;
+
+    sonido.onclick = function() {
+        if (count2 % 2 == 0) {
+            video.muted = true;
+            sonido.classList.remove("unmuted");
+            console.log('muted');
+        } else {
+            video.muted = false;
+            sonido.classList.add("unmuted");
+            console.log('unmuted');
+        }
+        count2++;
+    }
+/*
+    video.onclick = function() {
+        if (count % 2 == 0) {
+            video.play();
+            sonido.classList.add("unmuted");
+            console.log('play-sonido');
+        } else {
+            video.pause();
+            video.muted = false;
+            console.log('Pause-muted');
+        }
+        count++;
+    }*/
+
+    function min() {
+
+        var total = Math.trunc(video.duration);
+        var porcent = Math.trunc(video.currentTime);
+        var porcent25 = Math.trunc(total * 0.25);
+        var porcent50 = Math.trunc(total * 0.50);
+        var porcent75 = Math.trunc(total * 0.75);
+        var porcent100 = Math.trunc(total * 0.999);
+
+        if (porcent == 0 && clo == 0) {
+            dhtml.sendEvent(1, 'video_0%');
+             // Lanzamiento evento video_0%
+            console.log("Se lanza cuartil 0")
+            ///////////////////////////////////////
+            clo = 1;
+            console.log(porcent);
+        }
+        if (porcent == porcent25 && clo == 1) {
+            dhtml.sendEvent(2, 'video_25%');
+             // Lanzamiento evento video_25%
+            console.log("Se lanza cuartil 25")
+            ///////////////////////////////////////
+            clo = 2;
+            console.log(25);
+        } // EJECUCION DE EVENTO CUANDO LLEGUE A 25%
+        if (porcent == porcent50 && clo == 2) {
+            dhtml.sendEvent(3, 'video_50%');
+             // Lanzamiento evento video_50%
+            console.log("Se lanza cuartil 50")
+            ///////////////////////////////////////
+            clo = 3;
+            console.log(50);
+        }
+        if (porcent == porcent75 && clo == 3) {
+            dhtml.sendEvent(4, 'video_75%');
+             // Lanzamiento evento video_75%
+            console.log("Se lanza cuartil 75")
+            ///////////////////////////////////////
+            clo = 4;
+            console.log(75);
+        }
+        if (porcent == porcent100 && clo == 4) {
+            dhtml.sendEvent(5, 'video_100%');
+             // Lanzamiento evento video_100%
+            console.log("Se lanza cuartil 100")
+            ///////////////////////////////////////
+            clo = 5;
+            console.log(100);
+        }
+    }
+
+    setInterval('min()', 1000);
+
+    
+
+</script>
+
+
+
+    
+</body></html>
